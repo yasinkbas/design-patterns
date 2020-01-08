@@ -1,4 +1,5 @@
 import Foundation
+import XCTest
 
 protocol AnimalStrategy {
     var totalLive: Int { get }
@@ -33,7 +34,8 @@ class Dog: AnimalStrategy {
     func die() {
         totalLive -= 1
         totalLive == 0 ?
-            print("The \(animalType) died ☠️") : nil
+            print("The \(animalType) died ☠️") :
+            print("The \(animalType) is eating its food")
     }
 }
 
@@ -60,3 +62,38 @@ game.feedAnimal()
 var game2 = Game(animal: Dog())
 game2.wasAtackedAnimal()
 game2.feedAnimal()
+
+// MARK:- Simple Test
+class AnimalTests: XCTestCase {
+    override class func setUp() {
+        super.setUp()
+    }
+    
+    func testInitialLifeOfAnimals() {
+        // Given
+        let livesOfCat = Cat().totalLive
+        let livesOfDog = Dog().totalLive
+
+        // Then
+        XCTAssertEqual(livesOfCat, 9, "Cat's initial live is wrong")
+        XCTAssertEqual(livesOfDog, 1, "Dog's initial live is wrong")
+    }
+    
+    func testTotalLiveIsComputedWhenAnimalDied() {
+        // Given
+        let cat = Cat()
+        let dog = Dog()
+        
+        let catInitialLives = cat.totalLive
+        let dogInitialLives = dog.totalLive
+        
+        // When
+        cat.die()
+        dog.die()
+        
+        // Then
+        XCTAssertEqual(cat.totalLive, catInitialLives - 1)
+        XCTAssertEqual(dog.totalLive, dogInitialLives - 1)
+    }
+}
+AnimalTests.defaultTestSuite.run()
