@@ -29,7 +29,6 @@ class Dog: AnimalStrategy {
         totalLive == 0 ?
             print("You can't feed the animal because of died") :
             print("The \(animalType) is eating its food")
-        
     }
     func die() {
         totalLive -= 1

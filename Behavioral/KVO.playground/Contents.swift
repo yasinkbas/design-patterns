@@ -12,10 +12,6 @@ import UIKit
 
 var yasin = Person(name: "Yasin", age: 23) //-> initial
 var observer: NSKeyValueObservation? = yasin.observe(\.name, options: [.initial,.new,.old]) { (person, change) in
-//    if change.kind == .setting      { print("setting") }
-//    if change.kind == .insertion    { print("insertation") }
-//    if change.kind == .removal      { print("removal") }
-//    if change.kind == .replacement  { print("replacement") }
     print("changed or initialized name \"\(change.oldValue ?? "nil")\" with \"\(change.newValue!)\"")
 }
 yasin.name = "Akbas" //-> new
