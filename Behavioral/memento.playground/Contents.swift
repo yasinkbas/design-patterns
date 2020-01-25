@@ -52,4 +52,4 @@ print("First saved State: ", originator.state)
 originator.getState(from: careTaker[1])
 print("Second saved State: ", originator.state)
 
-// java version: https://www.tutorialspoint.com/design_pattern/memento_pattern.html
+// java version: https://www.tutorialspoint.com/design_pattern/memento_pattern.htm
