@@ -7,7 +7,7 @@ public struct Memento {
 
 // MARK: Originator
 public class Originator {
-    public var state: String = "" //footnote: Actually we could use instance of memento instead of string here
+    public var state: String = ""
     
     public func saveStateToMemento() -> Memento {
         return Memento(state: state)
