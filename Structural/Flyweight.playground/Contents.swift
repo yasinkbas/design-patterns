@@ -5,7 +5,7 @@ let font1 = UIFont.init(name: "AmericanTypewriter", size: 18)
 let font2 = UIFont.init(name: "AmericanTypewriter", size: 18)
 font1 === font2 // true
 
-// UIFont don't uses flyweight | points different objects
+// UIFont doesn't use flyweight | points different objects
 let color1 = UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
 let color2 = UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
 color1 === color2 // false
