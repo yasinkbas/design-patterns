@@ -69,7 +69,7 @@ final class Bookshelf: Book {
 
 var book1 = History(name: "history", author: "author1")
 var book2 = Science(name: "science", author: "author2")
-var book3 = Drama(name: "science", author: "author3")
+var book3 = Drama(name: "drama", author: "author3")
 
 var bookshelf = Bookshelf(name: "bookshelf")
 bookshelf.addBook(book1, book2, book3)
